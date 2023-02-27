@@ -22,15 +22,14 @@
         </form>
 
         <div class="tip">
-            <form class="button-inputs">
+            <form class="button-inputs" >
                 <label for="tip">Select Tip %</label>
-                <input type="button" value="5%">
-                <input type="button" value="10%">
-                <input type="button" value="15%">
-                <input type="button" value="25%">
-                <input type="button" value="50%">
-                <input type="number"  placeholder=Custom value="">
-
+                <button type="button" class="btn" value=".05">5%</button>
+                <button type="button" class="btn" value=".1">10%</button>
+                <button type="button" class="btn" value=".15">15%</button>
+                <button type="button" class="btn" value=".25">25%</button>
+                <button type="button" class="btn" value=".5">50%</button>
+                <input type="number" class="btn"  placeholder="Custom" value="">
             </form>
         </div>
 
@@ -38,39 +37,68 @@
             <label for="people">Number of People</label>
             <img src="images/icon-person.svg" width="15px">
             <input type="number" id="people" name ="people">
-
-
         </form>
 
         <div class="results">
             <div class="tip-per-person">
                 <h3>Tip Amount <br><span>/ person</span></h3>
-                <p>$0.00</p>
+                <p class="per-person-disp" >$0.00</p>
             </div>
-
             <div class="tip-total">
                 <h3>Total</h3>
-                <p>$0.00</p>
+                <p class ="tip-total-disp">$0.00</p>
             </div>
-
-            <button class="reset">RESET</button>
-
-
-
-
-
-
+            <button class="reset" onClick="window.location.reload();">RESET</button>
         </div>
     </main>
 
+    <script>
+        let billAmnt = 0;
+        let tipValue = 0;
+        let numOfPeople = 0;
+        let totalPrice= 0;
+        let tipPerPerson= 0;
+        
+        const billInput = document.querySelector('#bill');
+        billInput.addEventListener('input',getBillInput);
+        function getBillInput(){
+            billAmnt = billInput.value;
+            getTotal();
+        }
+
+        
+        const tipInput = document.querySelectorAll('.btn');
+        tipInput.forEach(tipPercent =>{
+            tipPercent.addEventListener('click',getPercent =>{
+                tipValue = tipPercent.value;
+                getTotal();    
+            })
+        });
+
+        
+        const peopleInput = document.querySelector("#people");
+        peopleInput.addEventListener('input',getPeopleInput);
+        function getPeopleInput(){
+            numOfPeople = peopleInput.value;
+            console.log(numOfPeople);
+            getTipPerPerson();
+        }
 
 
+        function getTotal(){
+            totalPrice = (billAmnt * tipValue).toFixed(2);
+            const billTotal = document.querySelector(".tip-total-disp");
+            billTotal.innerHTML=`$${totalPrice}`;
+            console.log(totalPrice);
+        }
 
 
-
-
-
-
-    
-</body>
+        function getTipPerPerson(){
+            tipPerPerson = (totalPrice / numOfPeople).toFixed(2);
+            const tipPerson = document.querySelector('.per-person-disp');
+            tipPerson.innerHTML=`$${tipPerPerson}`;
+            console.log(tipPerPerson);
+        }
+    </script>
+    </body>
 </html>

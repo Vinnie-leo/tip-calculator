@@ -13,16 +13,11 @@ body{
     align-items:center;
     gap:20px;
     min-width:375px;
-    height:100%;
-
-    
-    
+    height:100%;   
 }
 
 h1{
-    
     margin-top:20px;
-    
     overflow-wrap:break-word;
     color:rgba(0, 0, 0, 0.505);
     letter-spacing:12px;
@@ -33,14 +28,11 @@ h1{
 main{
     display:flex;
     flex-direction:column;
-    
     gap:20px;
     background-color:white;
     border-radius:15px;
     padding:25px;
-    width:100%;
-    
-    
+    width:100%;    
 }
 
 label{
@@ -53,11 +45,8 @@ label{
     display:flex;
     color:rgba(0, 0, 0, 0.505);
     justify-content:flex-end;
-    
-    
     gap:5px;
-    flex-direction:column;
-    
+    flex-direction:column;  
 }
 
 .text-inputs input{
@@ -65,13 +54,12 @@ label{
     justify-content:flex-end;
     text-align:right;
     font-size:20px;
-    
     background-color:hsl(185, 41%, 84%, 0.384);
     border:none;
     border-radius:5px;
     padding:10px;
-    
 }
+
 .text-inputs img {
     position:absolute;
     top:45px;
@@ -79,19 +67,16 @@ label{
     font-size:22px;
     font-weight:500;
     color:rgba(0, 0, 0, 0.267);
-    
 }
 
 .tip form{
     display:flex;
     justify-content:center;
-    
-    
     flex-wrap:wrap;
     gap:10px;
 }
 
-.tip form input{
+.tip form input,.btn{
     font-size:20px;
     width:155px;
     padding:5px 0px;
@@ -102,8 +87,12 @@ label{
     color:white;
 }
 
-.tip form input:focus{
+.tip form .btn:focus{
     background-color:hsl(172, 82%, 35%);
+}
+
+.tip form .btn::placeholder{
+    color:rgba(255, 255, 255, 0.501);
 }
 
 h3{
@@ -115,7 +104,6 @@ h3{
 span{
     color:hsl(172, 82%, 35%);
     font-size:13px;
-    
 }
 
 .results{
@@ -125,8 +113,7 @@ span{
     display:flex;
     flex-direction:column;
     flex-grow:1;
-    gap:20px;
-    
+    gap:20px;  
 }
 
 .tip-per-person{
@@ -144,7 +131,6 @@ span{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
 }
 
 .reset{
@@ -153,8 +139,7 @@ span{
     padding:10px;
     font-size:17px;
     letter-spacing:1px;
-    color:rgba(0, 0, 0, 0.636);
-    
+    color:rgba(0, 0, 0, 0.636);   
 }
 
 
