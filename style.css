@@ -32,7 +32,8 @@ main{
     background-color:white;
     border-radius:15px;
     padding:25px;
-    width:100%;    
+    max-width:550px; 
+      
 }
 
 label{
